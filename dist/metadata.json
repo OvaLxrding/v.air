@@ -3,6 +3,5 @@
     "obfuscated":  true,
     "preset":  "Vmify",
     "target":  "Lua51",
-    "sourceTranspiled":  "Luau-\u003eLua5.1",
-    "totalBytes":  1524260
+    "totalBytes":  1524366
 }

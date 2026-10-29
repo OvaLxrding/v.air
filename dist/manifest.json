@@ -4,9 +4,9 @@
                    {
                        "name":  "01-core.lua",
                        "file":  "chunks/01-core.lua",
-                       "bytes":  353652,
-                       "checksum":  3549380928,
-                       "sha256":  "d8b12ab961fe1895311c3b15d0fb289169cd9c4fc8c29b8070798b3a2ab8222a",
+                       "bytes":  353758,
+                       "checksum":  3556510812,
+                       "sha256":  "9ee48d9c00f0b362b4654a9ffebe7c611db43c1b1028dcc210574ecfc0b0dd57",
                        "runtime":  false
                    },
                    {
@@ -34,5 +34,5 @@
                        "runtime":  true
                    }
                ],
-    "totalBytes":  1524260
+    "totalBytes":  1524366
 }
