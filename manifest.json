@@ -1,0 +1,47 @@
+{
+    "version":  "1.0.7",
+    "obfuscated":  true,
+    "obfuscation":  {
+                        "tool":  "Prometheus Lua",
+                        "version":  "v0.3",
+                        "preset":  "Cff",
+                        "target":  "LuaU",
+                        "steps":  [
+                                      "Cff (control flow flattening)"
+                                  ],
+                        "note":  "Identifiers renamed, control flow flattened. Global table names (MODULES, getgenv) intentionally preserved for runtime lookup."
+                    },
+    "builtAt":  "2026-10-29T19:40:00+08:00",
+    "checksumAlgo":  "sha256",
+    "chunks":  [
+                   {
+                       "name":  "01-core.lua",
+                       "file":  "chunks/01-core.lua",
+                       "bytes":  235956,
+                       "sha256":  "c3d4c5e9c9d417953a548667cad2c9094dc99a180c6351760208b5cdd5bee337",
+                       "runtime":  false
+                   },
+                   {
+                       "name":  "02-ui.lua",
+                       "file":  "chunks/02-ui.lua",
+                       "bytes":  318305,
+                       "sha256":  "ce230562a92534e278af1df0c504dcf3c78dc05aa6a5c79843b47c97106115b7",
+                       "runtime":  false
+                   },
+                   {
+                       "name":  "03-game.lua",
+                       "file":  "chunks/03-game.lua",
+                       "bytes":  498682,
+                       "sha256":  "822a07a814eb7593dbe9a1a93e2cb05fdcc728b071e1aa13e63b785e4224d5bf",
+                       "runtime":  false
+                   },
+                   {
+                       "name":  "04-runtime.lua",
+                       "file":  "chunks/04-runtime.lua",
+                       "bytes":  17043,
+                       "sha256":  "03016aaf8ed5f0c2150554d20c2c6f27a808cbd2472a93ce912cf040a2ae6a58",
+                       "runtime":  true
+                   }
+               ],
+    "totalBytes":  1658415
+}
