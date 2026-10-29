@@ -1,0 +1,49 @@
+{
+  "commit": "de2ff19435b7d06877410516c07aff054c2c9eac",
+  "tree": "ce539de56c415d2f631e494f3c22a7fad40be29b",
+  "files": [
+    {
+      "path": "dist/chunks/01-core.lua",
+      "bytes": 179849,
+      "sha256": "3a2066f39aadc0b8f300b688bc1b51d737c68d2ebb71fdc797ec4109f4ec567b",
+      "blob": "6dec670405770f037c7b5b8c3d67a6cd17b8fb60"
+    },
+    {
+      "path": "dist/chunks/02-ui.lua",
+      "bytes": 188273,
+      "sha256": "a9d007fec7c47aaf626642bf4c2835a042259a5e20c0668ddee0ee931284a413",
+      "blob": "9c5ee042104fd643312623fe7b71d6dc4fe38557"
+    },
+    {
+      "path": "dist/chunks/03-game.lua",
+      "bytes": 231281,
+      "sha256": "8ed25d06e6e61a1fa3cdfb0550817c4e05e9e6bec452ddd5a5b4e351dc6b2b84",
+      "blob": "c7b627298453126631be1d1ac0ef4fc3ff145e9c"
+    },
+    {
+      "path": "dist/chunks/04-runtime.lua",
+      "bytes": 8845,
+      "sha256": "3cc437c47f171a4044ac8e8382f41d342e4b29993d426087c73edc57f922bcea",
+      "blob": "1dd428ed6c4f33c12aca0cd2442acbf2b9f688f5"
+    },
+    {
+      "path": "dist/manifest.json",
+      "bytes": 1325,
+      "sha256": "5e609600cee2a1e74daad32d61ad4ebf6f9f329ae3a3b37f713b87aa255a9316",
+      "blob": "dec679157c8f3fb8cf898211ec11938af8852b3b"
+    },
+    {
+      "path": "dist/metadata.json",
+      "bytes": 272,
+      "sha256": "3a9f50b207f806df207e7aba6571c31715a4a13c33d033c29782a7d7c2d96f52",
+      "blob": "93905203905be2b94c992913cd1b06dcb07b947f"
+    },
+    {
+      "path": "dist/payload.lua",
+      "bytes": 608241,
+      "sha256": "485d6939e6dfd22b83b0f38e0279078c6400ebf67e47665f967f480ea1ef5843",
+      "blob": "14a279b424294edc1d73a35e23b009409e59ecda"
+    }
+  ],
+  "message": "v.air 1.0.12 (encrypted dist: chacha20 + luaprotect-bound loader)"
+}

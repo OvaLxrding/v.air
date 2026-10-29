@@ -1,10 +1,11 @@
 {
-  "version": "1.0.12",
-  "builtAt": "2026-10-29 22:10:54",
-  "sourceBytes": 456178,
-  "payloadBytes": 615859,
-  "sha256": "a61eb7c755395ba06bf03eeb8ec8e5d94dd36a4a111fd5aed9aae00a18aa87cd",
+  "version": "1.0.13",
+  "builtAt": "2026-10-29 22:44:34",
+  "sourceBytes": 456402,
+  "payloadBytes": 616155,
+  "sha256": "d70e8ed7197f0f36eefee07be59736940ed39b7036e84c0935a6759f634291e5",
   "encrypted": true,
   "alg": "chacha20",
+  "protect": "vmify+wrap+chacha20",
   "payloadNonce": "PPH5M7lscSmE4nsz"
 }
