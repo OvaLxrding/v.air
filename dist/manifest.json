@@ -4,35 +4,35 @@
                    {
                        "name":  "01-core.lua",
                        "file":  "chunks/01-core.lua",
-                       "bytes":  353597,
-                       "checksum":  3812737269,
-                       "sha256":  "495c73f45664e871f242bbb0e762ba437abc96e211046026bea8798c6f01769a",
+                       "bytes":  353652,
+                       "checksum":  3549380928,
+                       "sha256":  "d8b12ab961fe1895311c3b15d0fb289169cd9c4fc8c29b8070798b3a2ab8222a",
                        "runtime":  false
                    },
                    {
                        "name":  "02-ui.lua",
                        "file":  "chunks/02-ui.lua",
-                       "bytes":  482616,
-                       "checksum":  1345025113,
-                       "sha256":  "1a97e65f909446a602cbc62407cbcefec5307dcf49d39c6c95edf808de5d1ae7",
+                       "bytes":  482671,
+                       "checksum":  3082687988,
+                       "sha256":  "74bb3ceb46cbde55100dd70dd19a4fac3aad22d321058c7de87ceac99e9abf74",
                        "runtime":  false
                    },
                    {
                        "name":  "03-game.lua",
                        "file":  "chunks/03-game.lua",
-                       "bytes":  658955,
-                       "checksum":  280696551,
-                       "sha256":  "db096c6176ec1ba352e40195eb36469cdb3ed948a7a7acfa203eb512513af830",
+                       "bytes":  659010,
+                       "checksum":  1937925414,
+                       "sha256":  "a7c1fa9f44e1e1d71b5059e8d1036c17f343b77d5e5742ac9c29c59b39fa4af7",
                        "runtime":  false
                    },
                    {
                        "name":  "04-runtime.lua",
                        "file":  "chunks/04-runtime.lua",
-                       "bytes":  28872,
-                       "checksum":  990310075,
-                       "sha256":  "f2fb08750ff7b1653846086ecf69871e1699893847e4a2bfb14fc39dc4488b70",
+                       "bytes":  28927,
+                       "checksum":  2809173962,
+                       "sha256":  "efb6511895d1f8231b863ce1161a1d43dd0b758d287d14b1178b341db806a501",
                        "runtime":  true
                    }
                ],
-    "totalBytes":  1524040
+    "totalBytes":  1524260
 }
