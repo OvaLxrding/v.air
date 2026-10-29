@@ -6,6 +6,6 @@
   "sha256": "81db217a2db14be654ae127897ca259407179565e535d27a53ea31037206d3d2",
   "encrypted": true,
   "alg": "chacha20",
-  "protect": "vmify+wrap+chacha20",
+  "protect": "array+strings+wrap+chacha20",
   "payloadNonce": "PPH5M7lscSmE4nsz"
 }

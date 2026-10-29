@@ -50,5 +50,5 @@
     }
   ],
   "totalBytes": 1512016,
-  "protect": "vmify+wrap+chacha20"
+  "protect": "array+strings+wrap+chacha20"
 }
