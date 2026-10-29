@@ -1,11 +1,7 @@
 {
     "version":  "1.0.7",
-    "builtAt":  "2026-10-29T19:40:00+08:00",
     "obfuscated":  true,
-    "preset":  "Cff",
-    "target":  "LuaU",
-    "sourceBytes":  432732,
-    "payloadBytes":  588429,
-    "totalBytes":  1658415,
-    "sha256":  "71459935e871f1362ab7d367380cda40ae6650de98a1ef4473a21dc2efa33f29"
+    "preset":  "Vmify",
+    "target":  "Lua51",
+    "totalBytes":  1524040
 }
