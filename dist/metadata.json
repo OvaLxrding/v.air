@@ -1,7 +1,10 @@
 {
-    "version":  "1.0.7",
-    "obfuscated":  true,
-    "preset":  "Vmify",
-    "target":  "Lua51",
-    "totalBytes":  1524366
+  "version": "1.0.12",
+  "builtAt": "2026-10-29 22:10:54",
+  "sourceBytes": 456178,
+  "payloadBytes": 615859,
+  "sha256": "a61eb7c755395ba06bf03eeb8ec8e5d94dd36a4a111fd5aed9aae00a18aa87cd",
+  "encrypted": true,
+  "alg": "chacha20",
+  "payloadNonce": "PPH5M7lscSmE4nsz"
 }
