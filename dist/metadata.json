@@ -1,9 +1,9 @@
 {
-  "version": "1.0.16",
-  "builtAt": "2026-10-29 22:56:13",
+  "version": "1.0.17",
+  "builtAt": "2026-10-29 23:14:45",
   "sourceBytes": 458124,
-  "payloadBytes": 618476,
-  "sha256": "7f96601ea88e1e164f4d2a7112eef45dbd6a006502e0277497d5854ece2727be",
+  "payloadBytes": 618475,
+  "sha256": "81db217a2db14be654ae127897ca259407179565e535d27a53ea31037206d3d2",
   "encrypted": true,
   "alg": "chacha20",
   "protect": "vmify+wrap+chacha20",
