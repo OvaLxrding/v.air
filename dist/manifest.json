@@ -7,22 +7,22 @@
     {
       "name": "01-core.lua",
       "file": "chunks/01-core.lua",
-      "bytes": 434385,
-      "plainBytes": 138311,
-      "obfBytes": 325787,
-      "checksum": 3725373434,
-      "sha256": "5b3a1462991ad458936332af92f6f77ec4ffbdd34b3d2286de714ed721a557d6",
+      "bytes": 437545,
+      "plainBytes": 138659,
+      "obfBytes": 328157,
+      "checksum": 2499836425,
+      "sha256": "f6ff028230f3f8feca47c0a9770e7b4c73bd8bf06af5541b3fc6f038c264c379",
       "nonce": "340rwxPxJTTziKoL",
       "runtime": false
     },
     {
       "name": "02-ui.lua",
       "file": "chunks/02-ui.lua",
-      "bytes": 508129,
-      "plainBytes": 141763,
-      "obfBytes": 381095,
-      "checksum": 661869315,
-      "sha256": "7858d4808d8f6497cadf552b0274e5fc27206371fec22503f06886f7a3507d46",
+      "bytes": 508433,
+      "plainBytes": 142827,
+      "obfBytes": 381322,
+      "checksum": 4193570045,
+      "sha256": "99ef676c6891ddc175ee022011614aabcdb8c1aa1e2e265481ced9dbd6f83813",
       "nonce": "krynEy12hCeuPO+p",
       "runtime": false
     },
@@ -49,6 +49,6 @@
       "runtime": true
     }
   ],
-  "totalBytes": 1675684,
+  "totalBytes": 1679148,
   "protect": "array+strings+wrap+chacha20"
 }
