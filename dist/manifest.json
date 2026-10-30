@@ -1,5 +1,5 @@
 {
-  "version": "1.1.08",
+  "version": "1.1.09",
   "encrypted": true,
   "alg": "chacha20",
   "counter": 1,
