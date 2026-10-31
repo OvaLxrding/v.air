@@ -1,5 +1,5 @@
 {
-  "version": "1.1.09",
+  "version": "1.1.11",
   "encrypted": true,
   "alg": "chacha20",
   "counter": 1,
@@ -7,33 +7,33 @@
     {
       "name": "01-core.lua",
       "file": "chunks/01-core.lua",
-      "bytes": 437545,
-      "plainBytes": 138659,
-      "obfBytes": 328157,
-      "checksum": 2499836425,
-      "sha256": "f6ff028230f3f8feca47c0a9770e7b4c73bd8bf06af5541b3fc6f038c264c379",
+      "bytes": 443965,
+      "plainBytes": 147366,
+      "obfBytes": 332973,
+      "checksum": 2003740077,
+      "sha256": "9d686a3b9e09e7bf78ac04f925abb69df1d3e74ea1cd4ed5df358dbd1fc96786",
       "nonce": "340rwxPxJTTziKoL",
       "runtime": false
     },
     {
       "name": "02-ui.lua",
       "file": "chunks/02-ui.lua",
-      "bytes": 508433,
-      "plainBytes": 142827,
-      "obfBytes": 381322,
-      "checksum": 4193570045,
-      "sha256": "99ef676c6891ddc175ee022011614aabcdb8c1aa1e2e265481ced9dbd6f83813",
+      "bytes": 512533,
+      "plainBytes": 143770,
+      "obfBytes": 384397,
+      "checksum": 3603666180,
+      "sha256": "db2445401ebff0c4e0122a6aa1e48d5382d2fdcede3a11ad4b187d6f815bd6da",
       "nonce": "krynEy12hCeuPO+p",
       "runtime": false
     },
     {
       "name": "03-game.lua",
       "file": "chunks/03-game.lua",
-      "bytes": 712737,
-      "plainBytes": 229732,
-      "obfBytes": 534551,
-      "checksum": 1757738588,
-      "sha256": "e5e183064c29b12abd3794ed548b6642056cffe40001b50ceccb08335e77e120",
+      "bytes": 742277,
+      "plainBytes": 238890,
+      "obfBytes": 556707,
+      "checksum": 3307376906,
+      "sha256": "72ed78a827ed47a62e81ad4df2b9a28c244147f85e221de5664c422213c1f87c",
       "nonce": "AfXOLWcB90Dv2osX",
       "runtime": false
     },
@@ -49,6 +49,6 @@
       "runtime": true
     }
   ],
-  "totalBytes": 1684236,
+  "totalBytes": 1724296,
   "protect": "array+strings+wrap+chacha20"
 }
