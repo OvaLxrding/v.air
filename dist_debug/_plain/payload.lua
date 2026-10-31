@@ -1,7 +1,7 @@
 do
 --[[
     v.air —— 单文件打包产物（Gakuran）
-    生成时间: 2026-11-01 02:34:34
+    生成时间: 2026-11-01 03:16:37
     说明: 所有模块已内联，不需要任何本地服务器 / 远端仓库，直接执行即可。
 ]]
 
@@ -6316,7 +6316,29 @@ local function patchAntiAFK()
 		return 0
 	end
 
+	
+	
+	
+	
+	
+	
+	
+	local budgetStart = os.clock()
+	local lastYield = budgetStart
+
 	for _, obj in ipairs(gcObjects) do
+		local now = os.clock()
+
+		if now - lastYield > 0.5 then
+			task.wait()
+			lastYield = os.clock()
+		end
+
+		if now - budgetStart > 3 then
+			log('AntiAFK 扫描超时收手')
+			break
+		end
+
 		if type(obj) == "table" then
 			
 			local okInit, initFn = pcall(function() return obj.Init end)
@@ -6441,7 +6463,23 @@ local function patchMovementServiceUtils()
 		return nil
 	end
 
+	
+	local budgetStart2 = os.clock()
+	local lastYield2 = budgetStart2
+
 	for _, obj in ipairs(gcObjects) do
+		local now2 = os.clock()
+
+		if now2 - lastYield2 > 0.5 then
+			task.wait()
+			lastYield2 = os.clock()
+		end
+
+		if now2 - budgetStart2 > 3 then
+			log('MovementUtils 扫描超时收手')
+			break
+		end
+
 		if type(obj) == "table" then
 			local okr, fn = pcall(function() return obj.SetSpeed end)
 			if okr and type(fn) == "function" then
@@ -20388,14 +20426,24 @@ setmetatable(Services, {
 
         if (not ok or service == nil) then
             
-            local boot = getgenv and getgenv().__vairBoot;
+            
+            
+            
+            
+            local name = tostring(p);
+            local looksLikeService = name:find('Service$') ~= nil
+                or name:find('^[A-Z][a-z]+[A-Z]') ~= nil;
 
-            if (type(boot) == 'table') then
-                boot.missingServices = boot.missingServices or {};
+            if (looksLikeService) then
+                local boot = getgenv and getgenv().__vairBoot;
 
-                if (not table.find(boot.missingServices, p)) then
-                    table.insert(boot.missingServices, p);
-                    warn(string.format('[v.air] 服务不可用: %s', tostring(p)));
+                if (type(boot) == 'table') then
+                    boot.missingServices = boot.missingServices or {};
+
+                    if (not table.find(boot.missingServices, name)) then
+                        table.insert(boot.missingServices, name);
+                        warn(string.format('[v.air] 服务不可用: %s', name));
+                    end;
                 end;
             end;
 

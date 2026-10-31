@@ -218,7 +218,29 @@ local function patchAntiAFK()
 		return 0
 	end
 
+	
+	
+	
+	
+	
+	
+	
+	local budgetStart = os.clock()
+	local lastYield = budgetStart
+
 	for _, obj in ipairs(gcObjects) do
+		local now = os.clock()
+
+		if now - lastYield > 0.5 then
+			task.wait()
+			lastYield = os.clock()
+		end
+
+		if now - budgetStart > 3 then
+			log('AntiAFK 扫描超时收手')
+			break
+		end
+
 		if type(obj) == "table" then
 			
 			local okInit, initFn = pcall(function() return obj.Init end)
@@ -343,7 +365,23 @@ local function patchMovementServiceUtils()
 		return nil
 	end
 
+	
+	local budgetStart2 = os.clock()
+	local lastYield2 = budgetStart2
+
 	for _, obj in ipairs(gcObjects) do
+		local now2 = os.clock()
+
+		if now2 - lastYield2 > 0.5 then
+			task.wait()
+			lastYield2 = os.clock()
+		end
+
+		if now2 - budgetStart2 > 3 then
+			log('MovementUtils 扫描超时收手')
+			break
+		end
+
 		if type(obj) == "table" then
 			local okr, fn = pcall(function() return obj.SetSpeed end)
 			if okr and type(fn) == "function" then

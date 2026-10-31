@@ -19,7 +19,7 @@ if (type(MODULES) ~= 'table') then
 end;
 --[[
     v.air —— 单文件打包产物（Gakuran）
-    生成时间: 2026-11-01 02:34:34
+    生成时间: 2026-11-01 03:16:37
     说明: 所有模块已内联，不需要任何本地服务器 / 远端仓库，直接执行即可。
 ]]
 
@@ -4082,14 +4082,24 @@ setmetatable(Services, {
 
         if (not ok or service == nil) then
             
-            local boot = getgenv and getgenv().__vairBoot;
+            
+            
+            
+            
+            local name = tostring(p);
+            local looksLikeService = name:find('Service$') ~= nil
+                or name:find('^[A-Z][a-z]+[A-Z]') ~= nil;
 
-            if (type(boot) == 'table') then
-                boot.missingServices = boot.missingServices or {};
+            if (looksLikeService) then
+                local boot = getgenv and getgenv().__vairBoot;
 
-                if (not table.find(boot.missingServices, p)) then
-                    table.insert(boot.missingServices, p);
-                    warn(string.format('[v.air] 服务不可用: %s', tostring(p)));
+                if (type(boot) == 'table') then
+                    boot.missingServices = boot.missingServices or {};
+
+                    if (not table.find(boot.missingServices, name)) then
+                        table.insert(boot.missingServices, name);
+                        warn(string.format('[v.air] 服务不可用: %s', name));
+                    end;
                 end;
             end;
 
