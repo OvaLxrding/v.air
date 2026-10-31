@@ -1,0 +1,59 @@
+{
+  "version": "1.1.73",
+  "encoded": "base64",
+  "encrypted": true,
+  "alg": "chacha20",
+  "counter": 1,
+  "chunks": [
+    {
+      "name": "01-core.lua",
+      "bytes": 471345,
+      "checksum": 1518422059,
+      "sha256": "c27a3d5b3a55f02d14602b8b1ee3ed139b721460b6d472069354000f8dd553fa",
+      "nonce": "340rwxPxJTTziKoL",
+      "runtime": false,
+      "segments": 1,
+      "ids": [
+        "7lEmjsCP"
+      ]
+    },
+    {
+      "name": "02-ui.lua",
+      "bytes": 507277,
+      "checksum": 955466938,
+      "sha256": "b1c11ad34b449c16d03f96979a469434be9dc0452b5c9329e3dcee9bb0c921c9",
+      "nonce": "krynEy12hCeuPO+p",
+      "runtime": false,
+      "segments": 1,
+      "ids": [
+        "QXKlC634"
+      ]
+    },
+    {
+      "name": "03-game.lua",
+      "bytes": 854345,
+      "checksum": 2691617770,
+      "sha256": "065d458f9518135c43387ad0f8bf52fa28e754efdd9be13d3b436a1d93812944",
+      "nonce": "AfXOLWcB90Dv2osX",
+      "runtime": false,
+      "segments": 2,
+      "ids": [
+        "EiB0ciQV",
+        "f9fL45XX"
+      ]
+    },
+    {
+      "name": "04-runtime.lua",
+      "bytes": 25521,
+      "checksum": 2651165217,
+      "sha256": "476e8383131f75acbc7a99a3c4fa28ce01290b426306f1b471131cd5b75b2fdb",
+      "nonce": "0071nhVQ82EZdI9p",
+      "runtime": true,
+      "segments": 1,
+      "ids": [
+        "lssbexWB"
+      ]
+    }
+  ],
+  "uploadedAt": "2026-10-31 22:23:06"
+}
