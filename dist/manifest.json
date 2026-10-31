@@ -1,5 +1,5 @@
 {
-  "version": "1.1.71",
+  "version": "1.1.72",
   "encrypted": true,
   "alg": "chacha20",
   "counter": 1,
@@ -7,11 +7,11 @@
     {
       "name": "01-core.lua",
       "file": "chunks/01-core.lua",
-      "bytes": 468381,
-      "plainBytes": 148634,
-      "obfBytes": 351283,
-      "checksum": 3967409787,
-      "sha256": "a1b69bcef00b35edae1f156e8ad2431e8b31a63d6ef8398a095cad38d6aa9390",
+      "bytes": 471345,
+      "plainBytes": 148919,
+      "obfBytes": 353508,
+      "checksum": 1518422059,
+      "sha256": "c27a3d5b3a55f02d14602b8b1ee3ed139b721460b6d472069354000f8dd553fa",
       "nonce": "340rwxPxJTTziKoL",
       "runtime": false
     },
@@ -49,6 +49,6 @@
       "runtime": true
     }
   ],
-  "totalBytes": 1853036,
+  "totalBytes": 1856000,
   "protect": "array+strings+wrap+chacha20"
 }
