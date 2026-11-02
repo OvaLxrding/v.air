@@ -1,7 +1,7 @@
 do
 --[[
     v.air —— 单文件打包产物（Gakuran）
-    生成时间: 2026-11-01 22:47:54
+    生成时间: 2026-11-02 20:44:47
     说明: 所有模块已内联，不需要任何本地服务器 / 远端仓库，直接执行即可。
 ]]
 
@@ -829,6 +829,149 @@ do
         end;
 
         return '__unknown__';
+    end;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    local function findSliderAt(x, y)
+        local best, bestArea = nil, nil;
+
+        for _, option in next, library.options do
+            if (option.type ~= 'slider') then continue end;
+
+            local track = option.slider;
+
+            if (not track or not track.Parent) then continue end;
+
+            
+            local current = track;
+            local visible = true;
+
+            while (current) do
+                if (current:IsA('GuiObject') and current.Visible == false) then
+                    visible = false;
+                    break;
+                end;
+
+                if (current:IsA('ScreenGui') and current.Enabled == false) then
+                    visible = false;
+                    break;
+                end;
+
+                if (current == library.base) then break end;
+
+                current = current.Parent;
+            end;
+
+            if (not visible or (current ~= library.base)) then continue end;
+
+            local pos, size = track.AbsolutePosition, track.AbsoluteSize;
+
+            if (size.X <= 0 or size.Y <= 0) then continue end;
+
+            
+            
+            
+            
+            
+            if (x >= pos.X and x <= pos.X + size.X
+                and y >= pos.Y and y <= pos.Y + size.Y) then
+                local area = size.X * size.Y;
+
+                if (not bestArea or area > bestArea) then
+                    best, bestArea = option, area;
+                end;
+            end;
+        end;
+
+        return best;
+    end;
+
+    local function setSliderFromX(option, x)
+        local track = option.slider;
+
+        if (not track or track.AbsoluteSize.X <= 0) then return end;
+
+        local ratio = (x - track.AbsolutePosition.X) / track.AbsoluteSize.X;
+        ratio = math.clamp(ratio, 0, 1);
+
+        option:SetValue(option.min + ratio * (option.max - option.min));
+    end;
+
+    if (not library.sliderDragInstalled) then
+        library.sliderDragInstalled = true;
+
+        local dragging = nil;
+
+        library.unloadMaid:GiveTask(UserInputService.InputBegan:Connect(function(input)
+            local inputType = input.UserInputType;
+
+            if (inputType ~= Enum.UserInputType.Touch
+                and inputType ~= Enum.UserInputType.MouseButton1) then
+                return;
+            end;
+
+            if (library.open == false) then return end;
+            if (library.base and library.base.Enabled == false) then return end;
+
+            
+            
+            if (library.hitTest and library.hitTest(input.Position.X, input.Position.Y)) then
+                return;
+            end;
+
+            local option = findSliderAt(input.Position.X, input.Position.Y);
+
+            if (not option) then return end;
+
+            dragging = option;
+            library.slider = option;
+
+            if (library.mobileUI) then
+                pcall(function() library.mobileUI:lockScroll() end);
+            end;
+
+            setSliderFromX(option, input.Position.X);
+        end));
+
+        library.unloadMaid:GiveTask(UserInputService.InputChanged:Connect(function(input)
+            if (not dragging) then return end;
+
+            local inputType = input.UserInputType;
+
+            if (inputType ~= Enum.UserInputType.Touch
+                and inputType ~= Enum.UserInputType.MouseMovement) then
+                return;
+            end;
+
+            setSliderFromX(dragging, input.Position.X);
+        end));
+
+        library.unloadMaid:GiveTask(UserInputService.InputEnded:Connect(function(input)
+            local inputType = input.UserInputType;
+
+            if (inputType ~= Enum.UserInputType.Touch
+                and inputType ~= Enum.UserInputType.MouseButton1) then
+                return;
+            end;
+
+            if (not dragging) then return end;
+
+            dragging = nil;
+            library.slider = nil;
+
+            if (library.mobileUI) then
+                pcall(function() library.mobileUI:unlockScroll() end);
+            end;
+        end));
     end;
 
     if (not library.tapDispatcherInstalled) then
@@ -17266,6 +17409,14 @@ do
 		local section = column:AddSection('版本更新');
 
 		local UPDATES = {
+			{
+				v = '1.1.181';
+				g = 'Gakuran';
+				at = '2026-11-02 20:45';
+				lines = {
+					'修复手机端滑块拖不动';
+				};
+			};
 			{
 				v = '1.1.180';
 				g = 'Gakuran';
