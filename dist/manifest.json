@@ -1,5 +1,5 @@
 {
-  "version": "1.1.181",
+  "version": "1.1.219",
   "encrypted": true,
   "alg": "chacha20",
   "counter": 1,
@@ -7,11 +7,11 @@
     {
       "name": "01-core.lua",
       "file": "chunks/01-core.lua",
-      "bytes": 487405,
-      "plainBytes": 156968,
-      "obfBytes": 365552,
-      "checksum": 2521265497,
-      "sha256": "365e369efc4226b1d0995ed997925b629ec5d79b4c317c779c1d679b6d71b7a2",
+      "bytes": 480433,
+      "plainBytes": 157069,
+      "obfBytes": 360324,
+      "checksum": 1080806984,
+      "sha256": "7f3512a3d1db6a1a14bc0b25ac06a6d20c2fd370ed3f0814d01e6de06397c363",
       "nonce": "340rwxPxJTTziKoL",
       "runtime": false
     },
@@ -29,11 +29,11 @@
     {
       "name": "03-game.lua",
       "file": "chunks/03-game.lua",
-      "bytes": 933009,
-      "plainBytes": 301115,
-      "obfBytes": 699755,
-      "checksum": 3113494059,
-      "sha256": "6e792f5b28beba9fd7d967b502e0ae02cdb65f67e6549eabfab3f3503a46797f",
+      "bytes": 988821,
+      "plainBytes": 315152,
+      "obfBytes": 741613,
+      "checksum": 3753388680,
+      "sha256": "4c42ac1273c0f103b2b8e33f893c53341fa6ba01e324784f523a76b4dc7c20aa",
       "nonce": "AfXOLWcB90Dv2osX",
       "runtime": false
     },
@@ -49,6 +49,6 @@
       "runtime": true
     }
   ],
-  "totalBytes": 1995124,
+  "totalBytes": 2043964,
   "protect": "array+strings+wrap+chacha20"
 }
