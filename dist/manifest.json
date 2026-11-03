@@ -1,29 +1,18 @@
 {
-  "version": "1.1.243",
+  "version": "1.1.244",
   "encrypted": true,
   "alg": "chacha20",
   "counter": 1,
   "chunks": [
     {
-      "name": "01-core-1.lua",
-      "file": "chunks/01-core-1.lua",
-      "bytes": 186901,
-      "plainBytes": 135096,
-      "obfBytes": 140174,
-      "checksum": 2963607191,
-      "sha256": "95bf0189a2f9438a662f5eda8f2463f584da5a0dc0e9f1aa5401b8a0a1dc7b64",
-      "nonce": "rPQQlj3y2hIPTS1w",
-      "runtime": false
-    },
-    {
-      "name": "01-core-2.lua",
-      "file": "chunks/01-core-2.lua",
-      "bytes": 30833,
-      "plainBytes": 22316,
-      "obfBytes": 23122,
-      "checksum": 3026485221,
-      "sha256": "bb9049a3f7a6e0d02019e4567f4845d24e1ba08fc14155330b66c43d3b887395",
-      "nonce": "SwZHsebGTnvRuIt5",
+      "name": "01-core.lua",
+      "file": "chunks/01-core.lua",
+      "bytes": 216345,
+      "plainBytes": 156442,
+      "obfBytes": 162257,
+      "checksum": 2636609243,
+      "sha256": "6d02ffa04c361cecfddf0dfd579fe62747f26ace6c9ba57a50618772075b8b37",
+      "nonce": "340rwxPxJTTziKoL",
       "runtime": false
     },
     {
@@ -38,25 +27,14 @@
       "runtime": false
     },
     {
-      "name": "03-game-1.lua",
-      "file": "chunks/03-game-1.lua",
-      "bytes": 460165,
-      "plainBytes": 330081,
-      "obfBytes": 345122,
-      "checksum": 3791616666,
-      "sha256": "429f69d20278e067afa80d3f5fe0f5dde825ecb3d4a02986cc5883b09e9d3b44",
-      "nonce": "LVOLIfkwvFiuzEAE",
-      "runtime": false
-    },
-    {
-      "name": "03-game-2.lua",
-      "file": "chunks/03-game-2.lua",
-      "bytes": 25133,
-      "plainBytes": 18165,
-      "obfBytes": 18849,
-      "checksum": 3229989170,
-      "sha256": "6adeaf6ebbe41834815363021bb6e6cef5d19149c32dced5b031fff8aee86858",
-      "nonce": "9syPdV+nI72+ldIj",
+      "name": "03-game.lua",
+      "file": "chunks/03-game.lua",
+      "bytes": 483913,
+      "plainBytes": 347276,
+      "obfBytes": 362932,
+      "checksum": 2233053203,
+      "sha256": "d57e4556039958332f8eb45edbae93ef7f5c0ff7e4e33bf41c549044f4f20256",
+      "nonce": "AfXOLWcB90Dv2osX",
       "runtime": false
     },
     {
@@ -71,6 +49,6 @@
       "runtime": true
     }
   ],
-  "totalBytes": 933606,
+  "totalBytes": 930832,
   "protect": "wrap+chacha20"
 }
