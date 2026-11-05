@@ -12127,26 +12127,24 @@ do local __f = function(...)
 	
 			local UPDATES = {
 				{
-					v = '1.1.278';
+					v = '1.1.290';
 					g = 'Gakuran';
-					at = '2026-11-05 18:35';
+					at = '2026-11-05 23:30';
 					lines = {
 						'彻底修好加载时卡住不动：有个后台检查太重，会把游戏占住十几秒';
 						'启动流程整体瘦身，进图更快、卡顿更少';
 						'「反作弊绕过」改为自动生效，不用再手动打开';
 						'外观：自定义发色修好了，颜色能上、头发大小和原来完全一致';
-						'外观：新增大头发，可以调放大倍数；新增大小校准';
-						'外观：新增去除原头发，只留调好颜色的那顶';
-						'外观：新增人物透明，逐部件半透明染色，颜色和透明程度都能调';
+						'外观：新增大头发，可调放大倍数；新增大小校准';
+						'外观：新增去除头部，整个头连头发一起去掉；项链、背包、耳机不受影响';
+						'外观：新增人物透明，只改透明度保留原本配色，程度可调至拉满';
 						'匿名：可以自定义「自己」和「他人」的名字，仅限自己看到，录视频用';
 						'「自动类」不再单独开页签，并进 Gakuran 主页面';
-						'修好点颜色面板时把后面那一行的开关一起点开的问题（面板层级整体抬到最上层）';
+						'修好点颜色面板时把后面那一行的开关一起点开的问题';
 						'修好人物透明拉动滑条后回不去的问题';
-						'修好去除原头发开关点了没反应的问题';
+						'修好无限体力提示「没找到 Movement 服务」：适配新版模块';
 						'修好管理员扫描重复启动、提示一次弹好几条';
-						'修好去除原头发：连前发/鬓角一起隐藏，关掉后原样恢复';
 						'新增观察玩家：镜头跟到选中玩家的视角';
-						'人物透明可拉满';
 						'统计面板用词改准了，不再把「没结算」读成「按早了」';
 					};
 				};
@@ -13898,39 +13896,18 @@ do local __f = function(...)
 				['138479634340126'] = true;	
 			};
 	
+					
+			
+			
+			
+			
+			
+			
 			local function isHairLike(instance)
-				if (not instance:IsA('Accessory')) then
-					return false;
-				end;
-	
-				if (isHairAccessory(instance)) then
-					return true;
-				end;
-	
-				local accessoryType = instance:GetAttribute('GakuranAccessoryType');
-	
-				if (accessoryType == 'Neck') then
-					return true;
-				end;
-	
-				local handle = instance:FindFirstChild('Handle');
-	
-				if (handle) then
-					local mesh = handle:FindFirstChildOfClass('SpecialMesh');
-	
-					if (mesh) then
-						local id = tostring(mesh.MeshId):match('%d+');
-	
-						if (id and HAIR_MESH_IDS[id]) then
-							return true;
-						end;
-					end;
-				end;
-	
-				return false;
+				return isHairAccessory(instance);
 			end;
 	
-			
+	
 			
 			
 			
@@ -14024,11 +14001,45 @@ do local __f = function(...)
 				end;
 			end;
 	
+			
+			
+			
+			
+			
+			
+			
+			local function applyHeadHidden(hide)
+				local character = getCharacter();
+	
+				if (not character) then
+					return;
+				end;
+	
+				local head = character:FindFirstChild('Head');
+	
+				if (not head or not head:IsA('BasePart')) then
+					return;
+				end;
+	
+				local function apply(instance)
+					if (instance:IsA('BasePart')) then
+						pcall(function()
+							instance.LocalTransparencyModifier = hide and 1 or 0;
+						end);
+					end;
+				end;
+	
+				apply(head);
+	
+				for _, descendant in next, head:GetDescendants() do
+					apply(descendant);
+				end;
+			end;
+	
 			local function refreshHairVisibility()
 				local hide = hideOriginalHair();
 				local character = getCharacter();
 	
-				
 				
 				if (character) then
 					for _, descendant in next, character:GetDescendants() do
@@ -14038,8 +14049,10 @@ do local __f = function(...)
 					end;
 				end;
 	
+				
+				applyHeadHidden(hide);
+	
 				for accessory, record in next, hairOverlays do
-					
 					setAccessoryHidden(accessory, hide);
 	
 					local handle = record.handle;
@@ -14259,14 +14272,13 @@ do local __f = function(...)
 	
 				
 				
-				
 				for _, descendant in next, character:GetDescendants() do
-					if (isHairAccessory(descendant)) then
+					if (isHairLike(descendant)) then
 						pcall(buildHairOverlay, descendant);
-	
-						break;
 					end;
 				end;
+	
+				pcall(refreshHairVisibility);
 			end;
 	
 			
@@ -14282,13 +14294,14 @@ do local __f = function(...)
 						local built = (next(hairOverlays) ~= nil);
 						local shouldHide = hideOriginalHair();
 	
+						
+						pcall(applyHeadHidden, shouldHide);
+	
 						for _, descendant in next, character:GetDescendants() do
 							if (isHairLike(descendant)) then
 								
-								if (not built and isHairAccessory(descendant)) then
+								if (not hairOverlays[descendant]) then
 									pcall(buildHairOverlay, descendant);
-	
-									built = (next(hairOverlays) ~= nil);
 								end;
 	
 								
@@ -14374,7 +14387,6 @@ do local __f = function(...)
 					return;
 				end;
 	
-				local color = charTintColor();
 				local alpha = charTintAlpha();
 	
 				for _, descendant in next, character:GetDescendants() do
@@ -14390,12 +14402,6 @@ do local __f = function(...)
 							charTintBackup[descendant] = record;
 						end;
 	
-						descendant.Color = color;
-	
-						
-						
-						
-						
 						
 						descendant.Transparency = math.max(record.transparency, alpha);
 					end;
@@ -14670,16 +14676,16 @@ do local __f = function(...)
 	
 			
 			appearanceSection:AddToggle({
-				text = '去除原头发',
+				text = '去除头部',
 				flag = 'Hide Original Hair',
 				state = true,
-				tip = '隐藏原来那顶头发，只显示你调好颜色的那顶；关掉就是两顶叠在一起',
+				tip = '直接隐藏整个头部（头和头发一起没）；项链、背包、耳机不受影响',
 				callback = function()
 					pcall(refreshHairVisibility);
 				end,
 			});
 	
-			
+					
 			local function reapplyHighlight()
 				if (library.flags.charTransparent == true) then
 					pcall(applyHighlight);
@@ -14689,14 +14695,8 @@ do local __f = function(...)
 			appearanceSection:AddToggle({
 				text = '人物透明',
 				flag = 'Char Transparent',
-				tip = '把自己整个人渲染成半透明纯色（带描边），方便看清动作；只影响本地显示',
+				tip = '把自己整个人渲染成半透明，方便看清动作；只影响本地显示，颜色沿用你当前身体的颜色',
 				callback = toggleHighlight,
-			}):AddColor({
-				text = '颜色',
-				flag = 'Char Highlight Color',
-				color = Color3.fromRGB(0, 255, 235),
-				tip = '人物透明的颜色',
-				callback = reapplyHighlight,
 			});
 	
 			appearanceSection:AddSlider({
@@ -15234,7 +15234,7 @@ do local __f = function(...)
 		local function findMoveService()
 			local cached = getgenv().__gakuranMoveService;
 	
-			if (type(cached) == 'table' and rawget(cached, '_sprintSpeed') ~= nil) then
+			if (type(cached) == 'table' and rawget(cached, 'StartSprint') ~= nil) then
 				return cached;
 			end;
 	
@@ -15253,7 +15253,11 @@ do local __f = function(...)
 			local lastYield = budgetStart;
 	
 			for _, obj in next, objects do
-				if (type(obj) == 'table' and rawget(obj, '_sprintSpeed') ~= nil and rawget(obj, 'StartSprint') ~= nil) then
+				
+				
+				if (type(obj) == 'table'
+					and rawget(obj, 'StartSprint') ~= nil
+					and (rawget(obj, 'GetStamina') ~= nil or rawget(obj, '_sprintSpeed') ~= nil)) then
 					getgenv().__gakuranMoveService = obj;
 	
 					return obj;
@@ -15279,10 +15283,20 @@ do local __f = function(...)
 				return;
 			end;
 	
+			
+			
 			pcall(function()
-				moveService._stamina = 100;
-				moveService._staminaSeenPositive = true;
-				moveService._sprintCooldownUntil = 0;
+				if (rawget(moveService, '_stamina') ~= nil) then
+					moveService._stamina = 100;
+				end;
+	
+				if (rawget(moveService, '_staminaSeenPositive') ~= nil) then
+					moveService._staminaSeenPositive = true;
+				end;
+	
+				if (rawget(moveService, '_sprintCooldownUntil') ~= nil) then
+					moveService._sprintCooldownUntil = 0;
+				end;
 			end);
 	
 			local humanoid = getHumanoid();
@@ -15327,7 +15341,22 @@ do local __f = function(...)
 	
 					if (not moveService) then
 						ToastNotif.new({ text = '没找到 Movement 服务：换角色后再开一次', duration = 4 });
+	
+						return;
 					end;
+	
+					
+					
+					pcall(function()
+						if (type(rawget(moveService, 'GetStamina')) == 'function' and not getgenv().__gakuranStaminaPatched) then
+							getgenv().__gakuranStaminaOriginalGetStamina = moveService.GetStamina;
+							getgenv().__gakuranStaminaPatched = true;
+	
+							moveService.GetStamina = function()
+								return 999;
+							end;
+						end;
+					end);
 				end);
 			end;
 	
