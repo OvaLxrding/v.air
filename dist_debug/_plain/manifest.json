@@ -1,0 +1,34 @@
+{
+  "version": "1.1.280",
+  "chunks": [
+    {
+      "name": "01-core.b6f76eb519.lua",
+      "file": "chunks/01-core.b6f76eb519.lua",
+      "bytes": 162257,
+      "checksum": 657274727,
+      "runtime": false
+    },
+    {
+      "name": "02-ui.e343d84427.lua",
+      "file": "chunks/02-ui.e343d84427.lua",
+      "bytes": 168802,
+      "checksum": 252869491,
+      "runtime": false
+    },
+    {
+      "name": "03-game.4b9ad37fcf.lua",
+      "file": "chunks/03-game.4b9ad37fcf.lua",
+      "bytes": 397786,
+      "checksum": 3363585391,
+      "runtime": false
+    },
+    {
+      "name": "04-runtime.fe1ebd5082.lua",
+      "file": "chunks/04-runtime.fe1ebd5082.lua",
+      "bytes": 6344,
+      "checksum": 567141504,
+      "runtime": true
+    }
+  ],
+  "totalBytes": 735189
+}
