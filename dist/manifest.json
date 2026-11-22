@@ -1,5 +1,5 @@
 {
-  "version": "1.1.473",
+  "version": "1.1.474",
   "encrypted": true,
   "alg": "chacha20",
   "counter": 1,
@@ -7,48 +7,48 @@
     {
       "name": "1-core.lua",
       "file": "chunks/1-core.lua",
-      "bytes": 540553,
+      "bytes": 536349,
       "plainBytes": 174435,
-      "obfBytes": 405414,
-      "checksum": 2263908306,
-      "sha256": "1799f0eebb98badbefaa547d7d3c64ee85c60290862a14d6c8a4c7ecf9bab4fb",
+      "obfBytes": 402259,
+      "checksum": 336058538,
+      "sha256": "3051d851557628921a580c5278874932edc750ffdd51109297443c4e1dd7de4e",
       "nonce": "KOAG9wpTRFtOeEb3",
       "runtime": false
     },
     {
       "name": "2-ui.lua",
       "file": "chunks/2-ui.lua",
-      "bytes": 604001,
-      "plainBytes": 187829,
-      "obfBytes": 453000,
-      "checksum": 520726414,
-      "sha256": "aa822f572b4a67face77cb59b188e451e04a41308e8989618a33b654e1485479",
+      "bytes": 604229,
+      "plainBytes": 188094,
+      "obfBytes": 453170,
+      "checksum": 1687543874,
+      "sha256": "cd7edd3fb7e164e3b233cb2e0d2f6c0a6bdf8aedbbb5f88d4e2c31624f577d37",
       "nonce": "0hUoGWI0ef/+9tnB",
       "runtime": false
     },
     {
       "name": "3-game.lua",
       "file": "chunks/3-game.lua",
-      "bytes": 2043389,
+      "bytes": 2052161,
       "plainBytes": 635087,
-      "obfBytes": 1532541,
-      "checksum": 1183816972,
-      "sha256": "3acb5dfab6d7f851b03c5c9e6351c4ae0324359e040d207f6ca1d424077c34e2",
+      "obfBytes": 1539120,
+      "checksum": 1698715719,
+      "sha256": "07cc97985f5d0c0147020acca07305da1eb73551ef7bfe8e7c7124b91282e3e4",
       "nonce": "E9ey0/PGXCvt52RF",
       "runtime": false
     },
     {
       "name": "4-runtime.lua",
       "file": "chunks/4-runtime.lua",
-      "bytes": 23085,
+      "bytes": 22657,
       "plainBytes": 6069,
-      "obfBytes": 17313,
-      "checksum": 4013052512,
-      "sha256": "ec6f37b0606fbdf00015627b6a80b6e8a084d8a77aa8433553b6b2e0428bb3d8",
+      "obfBytes": 16991,
+      "checksum": 2443354349,
+      "sha256": "063e7e42b344adb650f3858ea4a513b67418bc099f1b5a560865c51a2741cf54",
       "nonce": "S+qGjV0K9+wFGwP4",
       "runtime": true
     }
   ],
-  "totalBytes": 3211028,
+  "totalBytes": 3215396,
   "protect": "array+strings+wrap+chacha20"
 }
